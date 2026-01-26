@@ -1,0 +1,51 @@
+/* Margin top classes */
+.margin-top-small {
+  margin-top: var(--spacing-sm);
+}
+
+.margin-top-medium {
+  margin-top: var(--spacing-md);
+}
+
+.margin-top-large {
+  margin-top: var(--spacing-lg);
+}
+
+/* Margin bottom classes */
+.margin-bottom-small {
+  margin-bottom: var(--spacing-sm);
+}
+
+.margin-bottom-medium {
+  margin-bottom: var(--spacing-md);
+}
+
+.margin-bottom-large {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Padding top classes */
+.padding-top-small {
+  padding-top: var(--spacing-sm);
+}
+
+.padding-top-medium {
+  padding-top: var(--spacing-md);
+}
+
+.padding-top-large {
+  padding-top: var(--spacing-lg);
+}
+
+/* Padding bottom classes */
+.padding-bottom-small {
+  padding-bottom: var(--spacing-sm);
+}
+
+.padding-bottom-medium {
+  padding-bottom: var(--spacing-md);
+}
+
+.padding-bottom-large {
+  padding-bottom: var(--spacing-lg);
+}

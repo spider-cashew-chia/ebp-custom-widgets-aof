@@ -1,0 +1,379 @@
+/* Text Block 1 Widget Styles */
+/* Main container for the text block widget */
+.ebp-text-block-1 {
+  position: relative;
+  width: 100%;
+  /* min-height: 100vh; Ensure minimum height for pinning */
+}
+
+/* Container wrapper */
+.ebp-text-block-1-container {
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Heading section */
+.ebp-text-block-1-heading {
+  margin-bottom: var(--spacing-lg);
+}
+
+.ebp-text-block-1-heading h2 {
+  font-family: var(--font-secondary);
+  color: var(--white);
+  font-size: 15.3vw;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Content wrapper - flexbox layout */
+.ebp-text-block-1-content {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  /* min-height: 100vh; Minimum height for scroll pinning */
+}
+
+/* Left column - rich text content */
+.ebp-text-block-1-left {
+  flex: 1;
+  /* position: sticky; */
+  top: var(--spacing-md);
+  align-self: flex-start;
+  padding-inline-start: 4rem;
+}
+
+@media(max-width: 1199px){
+  .ebp-text-block-1-left {
+    padding-block-start: 100px;
+  }
+}
+
+/* Rich text styling */
+.ebp-text-block-1-rich-text {
+  font-family: var(--font-primary);
+  color: var(--white);
+}
+
+.ebp-text-block-1-rich-text p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.ebp-text-block-1-rich-text h1,
+.ebp-text-block-1-rich-text h2,
+.ebp-text-block-1-rich-text h3,
+.ebp-text-block-1-rich-text h4,
+.ebp-text-block-1-rich-text h5,
+.ebp-text-block-1-rich-text h6 {
+  font-family: var(--font-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Right column - team members list */
+.ebp-text-block-1-right {
+  flex: 1;
+  position: relative;
+  /* min-height: 100vh;  */
+  overflow: visible; /* Allow members above and below to be visible */
+}
+
+/* Team wrapper container */
+.ebp-text-block-1-team-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* Allow members above and below to be visible */
+}
+
+/* Team counter (e.g., "01 - 04") */
+.ebp-text-block-1-team-counter {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  z-index: 5;
+}
+
+/* Current counter number */
+.ebp-text-block-1-counter-current {
+  font-weight: 400;
+}
+
+/* Counter separator */
+.ebp-text-block-1-counter-separator {
+  font-weight: 400;
+}
+
+/* Total counter number */
+.ebp-text-block-1-counter-total {
+  font-weight: 400;
+}
+
+/* Team list container */
+.ebp-text-block-1-team-list {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-inline-start: 200px;
+  flex-direction: column;
+  /* This will be translated by GSAP to keep active member centered */
+  will-change: transform;
+  overflow: visible; /* Allow members above and below to be visible */
+}
+
+@media(max-width: 767px){
+  .ebp-text-block-1-team-list {
+    padding-inline-start: 0;
+  }
+}
+
+/* Individual team member */
+.ebp-text-block-1-team-member {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  opacity: 0.5;
+  display: block;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  filter: blur(5px);
+  /* Add spacing between team members */
+  margin-bottom: var(--spacing-lg);
+  /* Ensure each member takes up space in the vertical stack */
+  flex-shrink: 0;
+}
+
+/* Team member content */
+.ebp-text-block-1-team-member-content {
+  display: flex;
+  /* flex-direction: column; */
+  gap: var(--spacing-sm);
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Team role (ACF field) */
+.ebp-text-block-1-team-role {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  max-width: 250px;
+  text-wrap: balance;
+  /* margin-bottom: var(--spacing-sm); */
+}
+
+/* Team name (post title) */
+.ebp-text-block-1-team-name {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Featured image container (shown on hover) */
+.ebp-text-block-1-team-image {
+  position: absolute;
+  top: 60%;
+  right: var(--spacing-lg);
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  /* border-radius: 50%; */
+  /* overflow: hidden; */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+/* Featured image */
+.ebp-text-block-1-team-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media(max-width: 1199px){
+.ebp-text-block-1-content{
+  flex-direction: column-reverse;
+}
+}
+
+
+/* Style variations using CSS variables */
+/* Font color variations */
+.ebp-text-block-1.font-color-small .ebp-text-block-1-rich-text,
+.ebp-text-block-1.font-color-small .ebp-text-block-1-team-role,
+.ebp-text-block-1.font-color-small .ebp-text-block-1-team-name {
+  color: var(--white);
+}
+
+.ebp-text-block-1.font-color-medium .ebp-text-block-1-rich-text,
+.ebp-text-block-1.font-color-medium .ebp-text-block-1-team-role,
+.ebp-text-block-1.font-color-medium .ebp-text-block-1-team-name {
+  color: var(--white);
+}
+
+.ebp-text-block-1.font-color-large .ebp-text-block-1-rich-text,
+.ebp-text-block-1.font-color-large .ebp-text-block-1-team-role,
+.ebp-text-block-1.font-color-large .ebp-text-block-1-team-name {
+  color: var(--white);
+}
+
+/* Heading color variations */
+.ebp-text-block-1.heading-color-small .ebp-text-block-1-rich-text h1,
+.ebp-text-block-1.heading-color-small .ebp-text-block-1-rich-text h2,
+.ebp-text-block-1.heading-color-small .ebp-text-block-1-rich-text h3,
+.ebp-text-block-1.heading-color-small .ebp-text-block-1-rich-text h4,
+.ebp-text-block-1.heading-color-small .ebp-text-block-1-rich-text h5,
+.ebp-text-block-1.heading-color-small .ebp-text-block-1-rich-text h6 {
+  color: var(--white);
+}
+
+.ebp-text-block-1.heading-color-medium .ebp-text-block-1-rich-text h1,
+.ebp-text-block-1.heading-color-medium .ebp-text-block-1-rich-text h2,
+.ebp-text-block-1.heading-color-medium .ebp-text-block-1-rich-text h3,
+.ebp-text-block-1.heading-color-medium .ebp-text-block-1-rich-text h4,
+.ebp-text-block-1.heading-color-medium .ebp-text-block-1-rich-text h5,
+.ebp-text-block-1.heading-color-medium .ebp-text-block-1-rich-text h6 {
+  color: var(--white);
+}
+
+.ebp-text-block-1.heading-color-large .ebp-text-block-1-rich-text h1,
+.ebp-text-block-1.heading-color-large .ebp-text-block-1-rich-text h2,
+.ebp-text-block-1.heading-color-large .ebp-text-block-1-rich-text h3,
+.ebp-text-block-1.heading-color-large .ebp-text-block-1-rich-text h4,
+.ebp-text-block-1.heading-color-large .ebp-text-block-1-rich-text h5,
+.ebp-text-block-1.heading-color-large .ebp-text-block-1-rich-text h6 {
+  color: var(--white);
+}
+
+/* Background color variations */
+.ebp-text-block-1.background-color-small {
+  background-color: var(--black);
+}
+
+.ebp-text-block-1.background-color-medium {
+  background-color: var(--black);
+}
+
+.ebp-text-block-1.background-color-large {
+  background-color: var(--black);
+}
+
+/* Margin top variations */
+.ebp-text-block-1.margin-top-none {
+  margin-top: 0;
+}
+
+.ebp-text-block-1.margin-top-small {
+  margin-top: var(--spacing-sm);
+}
+
+.ebp-text-block-1.margin-top-medium {
+  margin-top: var(--spacing-md);
+}
+
+.ebp-text-block-1.margin-top-large {
+  margin-top: var(--spacing-lg);
+}
+
+/* Margin bottom variations */
+.ebp-text-block-1.margin-bottom-none {
+  margin-bottom: 0;
+}
+
+.ebp-text-block-1.margin-bottom-small {
+  margin-bottom: var(--spacing-sm);
+}
+
+.ebp-text-block-1.margin-bottom-medium {
+  margin-bottom: var(--spacing-md);
+}
+
+.ebp-text-block-1.margin-bottom-large {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Padding top variations */
+.ebp-text-block-1.padding-top-none {
+  padding-top: 0;
+}
+
+.ebp-text-block-1.padding-top-small {
+  padding-top: var(--spacing-sm);
+}
+
+.ebp-text-block-1.padding-top-medium {
+  padding-top: var(--spacing-md);
+}
+
+.ebp-text-block-1.padding-top-large {
+  padding-top: var(--spacing-lg);
+}
+
+/* Padding bottom variations */
+.ebp-text-block-1.padding-bottom-none {
+  padding-bottom: 0;
+}
+
+.ebp-text-block-1.padding-bottom-small {
+  padding-bottom: var(--spacing-sm);
+}
+
+.ebp-text-block-1.padding-bottom-medium {
+  padding-bottom: var(--spacing-md);
+}
+
+.ebp-text-block-1.padding-bottom-large {
+  padding-bottom: var(--spacing-lg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Stack columns on mobile */
+  .ebp-text-block-1-content {
+    flex-direction: column-reverse;
+  }
+
+  /* Remove sticky positioning on mobile */
+  .ebp-text-block-1-left {
+    position: relative;
+    top: 0;
+  }
+
+  /* Adjust image container position on mobile */
+  .ebp-text-block-1-team-image {
+    right: var(--spacing-sm);
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Adjust font sizes on mobile */
+  .ebp-text-block-1-team-role {
+    font-size: 1.2rem;
+  }
+
+  .ebp-text-block-1-team-name {
+    font-size: 1.5rem;
+  }
+}
