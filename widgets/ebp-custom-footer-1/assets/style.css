@@ -2,203 +2,205 @@
     padding-block: 4rem;
 } */
 
-.elementor-location-footer{
-    min-height: 80vh;
+.elementor-location-footer {
+  min-height: 80vh;
 }
 
-.ebp-footer-1-container{
-    padding-inline: 1rem;
+.ebp-footer-1-container {
+  padding-inline: 1rem;
 }
 
-
-@media(min-width: 768px){
-.ebp-footer-1-row{
+@media (min-width: 768px) {
+  .ebp-footer-1-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-}
+  }
 
-.ebp-footer-1-row > div:last-child{
+  .ebp-footer-1-row > div:last-child {
     text-align: right;
     gap: 1rem;
-        display: flex;
-        flex-direction: column;
-}
+    display: flex;
+    flex-direction: column;
+  }
 
-.ebp-footer-1-row{
+  .ebp-footer-1-row {
     padding-inline: 4rem;
     padding-block-start: 3rem;
-}
-}
-
-
-
-.ebp-footer-1-copyright-socials{
-    margin-block-start: 4rem;
+  }
 }
 
-.ebp-footer-1-heading h2, 
-.ebp-custom-grid-1-heading h2, 
-.ebp-beliefs-1-heading h2{
-    display: flex;
-    justify-content: space-between;
-    font-size: clamp(3rem, 1.3571rem + 8.2143vw, 8.75rem);
-    text-transform: uppercase;
-    font-weight: 400;
-    margin-block-start: 0;
+.ebp-footer-1-copyright-socials {
+  margin-top: auto;
+  margin-bottom: 4rem;
+}
+
+.ebp-footer-1-heading h2,
+.ebp-custom-grid-1-heading h2,
+.ebp-beliefs-1-heading h2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(3rem, 1.3571rem + 8.2143vw, 8.75rem);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-block-start: 0;
 }
 
 /* Policies Section */
 .ebp-footer-1-policies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-block-end: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-end: 1rem;
 }
 
 /* Policy trigger button - styled as a link */
 .ebp-footer-1-policy-trigger {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    text-decoration: underline;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    transition: opacity 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  transition: opacity 0.2s ease;
 }
 
 .ebp-footer-1-policy-trigger:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .ebp-footer-1-policy-trigger:focus {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* Policy Modal - Hidden by default */
 .ebp-footer-1-policy-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  pointer-events: none;
 }
 
 /* Modal when active */
 .ebp-footer-1-policy-modal-active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Modal overlay (background) */
 .ebp-footer-1-policy-modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
 /* Modal content container */
 .ebp-footer-1-policy-modal-content {
-    position: relative;
-    background-color: var(--white);
-    max-width: 90%;
-    max-height: 90vh;
-    width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 1;
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
+  position: relative;
+  background-color: var(--white);
+  max-width: 90%;
+  max-height: 90vh;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
 }
 
 .ebp-footer-1-policy-modal-active .ebp-footer-1-policy-modal-content {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 /* Modal close button */
 .ebp-footer-1-policy-modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    line-height: 1;
-    cursor: pointer;
-    color: #333;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    z-index: 2;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #333;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  z-index: 2;
 }
 
 .ebp-footer-1-policy-modal-close:hover {
-    background-color: var(--white);
-    color: #000;
+  background-color: var(--white);
+  color: #000;
 }
 
 .ebp-footer-1-policy-modal-close:focus {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* Modal header */
 .ebp-footer-1-policy-modal-header {
-    padding: 2rem 2rem 1rem;
-    border-bottom: 1px solid var(--white);
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid var(--white);
 }
 
 .ebp-footer-1-policy-modal-title {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
 }
 
 /* Modal body */
 .ebp-footer-1-policy-modal-body {
-    padding: 1.5rem 2rem 2rem;
-    overflow-y: auto;
-    flex: 1;
+  padding: 1.5rem 2rem 2rem;
+  overflow-y: auto;
+  flex: 1;
 }
 
-.ebp-footer-1-policy-modal-body p{
-    color: #000
+.ebp-footer-1-policy-modal-body p {
+  color: #000;
 }
 
 /* Style rich text content inside modal */
 .ebp-footer-1-policy-modal-body p {
-    margin-block-end: 1rem;
+  margin-block-end: 1rem;
 }
 
 .ebp-footer-1-policy-modal-body p:last-child {
-    margin-block-end: 0;
+  margin-block-end: 0;
 }
 
 .ebp-footer-1-policy-modal-body h1,
@@ -207,8 +209,8 @@
 .ebp-footer-1-policy-modal-body h4,
 .ebp-footer-1-policy-modal-body h5,
 .ebp-footer-1-policy-modal-body h6 {
-    margin-block-start: 1.5rem;
-    margin-block-end: 1rem;
+  margin-block-start: 1.5rem;
+  margin-block-end: 1rem;
 }
 
 .ebp-footer-1-policy-modal-body h1:first-child,
@@ -217,49 +219,55 @@
 .ebp-footer-1-policy-modal-body h4:first-child,
 .ebp-footer-1-policy-modal-body h5:first-child,
 .ebp-footer-1-policy-modal-body h6:first-child {
-    margin-block-start: 0;
+  margin-block-start: 0;
 }
 
 .ebp-footer-1-policy-modal-body ul,
 .ebp-footer-1-policy-modal-body ol {
-    margin-block-start: 1rem;
-    margin-block-end: 1rem;
-    padding-inline-start: 2rem;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  padding-inline-start: 2rem;
 }
 
 .ebp-footer-1-policy-modal-body a {
-    color: inherit;
-    text-decoration: underline;
+  color: inherit;
+  text-decoration: underline;
 }
 
 .ebp-footer-1-policy-modal-body a:hover {
-    opacity: 0.7;
+  opacity: 0.7;
+}
+
+.ebp-footer-1-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .ebp-footer-1-policy-modal-content {
-        max-width: 95%;
-        max-height: 95vh;
-    }
+  .ebp-footer-1-policy-modal-content {
+    max-width: 95%;
+    max-height: 95vh;
+  }
 
-    .ebp-footer-1-policy-modal-header {
-        padding: 1.5rem 1.5rem 1rem;
-    }
+  .ebp-footer-1-policy-modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
 
-    .ebp-footer-1-policy-modal-body {
-        padding: 1rem 1.5rem 1.5rem;
-    }
+  .ebp-footer-1-policy-modal-body {
+    padding: 1rem 1.5rem 1.5rem;
+  }
 
-    .ebp-footer-1-policy-modal-close {
-        top: 0.5rem;
-        right: 0.5rem;
-        width: 2rem;
-        height: 2rem;
-        font-size: 1.5rem;
-    }
+  .ebp-footer-1-policy-modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+  }
 
-    .ebp-footer-1-policy-modal-title {
-        font-size: 1.25rem;
-    }
+  .ebp-footer-1-policy-modal-title {
+    font-size: 1.25rem;
+  }
 }

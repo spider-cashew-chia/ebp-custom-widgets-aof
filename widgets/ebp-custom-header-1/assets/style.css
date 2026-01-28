@@ -3,7 +3,7 @@
   padding-inline: 2rem !important;
 }
 
-.elementor-location-header{
+.elementor-location-header {
   z-index: 99;
 }
 
@@ -27,7 +27,7 @@
   position: fixed;
   width: calc(100% - 2rem);
   bottom: 2rem;
-  left: 1rem
+  left: 1rem;
   /* transform: translateY(-50%); */
 }
 
@@ -89,8 +89,8 @@
   right: 0;
 }
 
-.ebp-header-1-menu-toggle--menu-bg{
-  content: '';
+.ebp-header-1-menu-toggle--menu-bg {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -121,7 +121,6 @@
   width: 100%;
   z-index: 999;
   cursor: pointer;
-
 }
 
 .ebp-header-1-locations-menu-wrapper {
@@ -154,13 +153,11 @@
   padding-inline-start: 3rem;
 }
 
-.menu-main-container li a:hover{
+.menu-main-container li a:hover {
   background-color: var(--yellow);
   display: block;
   width: 100%;
 }
-
-
 
 /* .ebp-header-1-menu {
   height: 100dvh;
@@ -173,50 +170,50 @@
     justify-content: flex-end;
   }
 
-  .ebp-header-1-locations{
+  .ebp-header-1-locations {
     display: none;
   }
 
-  .ebp-header-1-tagline{
+  .ebp-header-1-tagline {
     font-size: 0.45rem;
   }
 
-  .ebp-header-1-menu-toggle{
+  .ebp-header-1-menu-toggle {
     height: auto;
     width: 5rem;
   }
 
-  .ebp-header-1-menu-toggle span{
+  .ebp-header-1-menu-toggle span {
     padding-block-start: 0;
     padding-inline-end: 0;
     justify-content: center;
   }
 
-  .menu-main-container li a, 
-  .menu-main-container ul{
+  .menu-main-container li a,
+  .menu-main-container ul {
     font-size: 2rem;
   }
 
-  .menu-main-container{
-    left: 0
+  .menu-main-container {
+    left: 0;
   }
 
-  .ebp-header-1-contact-link, .ebp-header-1-newsletter-link{
+  .ebp-header-1-contact-link,
+  .ebp-header-1-newsletter-link {
     font-size: 0.8rem;
   }
 
-  .ebp-header-1-contact-newsletter{
+  .ebp-header-1-contact-newsletter {
     align-items: flex-end;
   }
 
-  .ebp-header-1-contact{
+  .ebp-header-1-contact {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .ebp-header-1-contact-newsletter{
-        width: calc(100% - 2rem);
-
+  .ebp-header-1-contact-newsletter {
+    width: calc(100% - 2rem);
   }
 }
 
@@ -252,25 +249,31 @@
   display: block;
 }
 
-/* The logo hole expands to reveal the site underneath */
+/* Zoom effect: logo starts small and scales out to reveal the site. Adjust scale() and transition here. */
 .ebp-header-1-home-mask-logo {
-  transform: scale(0.11);
+  transform: scale(0.11); /* starting size (small logo) */
   transform-origin: 54.5% 55%;
   transform-box: fill-box;
-  transition: transform 4s ease-in-out;
+  transition: transform 4s ease-in-out; /* speed: change 4s; keep script.js timeout (e.g. 4000) in sync */
 }
 
-/* Mask colors: white shows, black hides */
+/* Mask: black = hide loader BG. Whole logo shape (circle + letters) is black so the loader BG never shows there.
+   Letter areas stay transparent and reveal the page underneath; the white circle overlay paints only the circle. */
 .ebp-header-1-home-mask-logo path {
   fill: #000 !important;
 }
 
-.ebp-header-1-home-mask-logo .ebp-home-mask-solid {
+.ebp-header-1-home-bg-image.is-expanded .ebp-header-1-home-mask-logo {
+  transform: scale(40); /* end size: larger = zoom goes further (was 25) */
+}
+
+/* White circle overlay: solid white so the "white bit" of the logo is opaque during the zoom reveal */
+.ebp-header-1-home-white-circle use {
   fill: #fff !important;
 }
 
-.ebp-header-1-home-bg-image.is-expanded .ebp-header-1-home-mask-logo {
-  transform: scale(25);
+.ebp-home-mask-solid {
+  fill: #fff !important;
 }
 
 .ebp-header-1-home-text-wrapper {
@@ -328,3 +331,5 @@
 .ebp-header-1-home-logo .ebp-home-logo-solid {
   fill: #fff;
 }
+
+/
