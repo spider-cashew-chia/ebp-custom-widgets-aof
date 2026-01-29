@@ -1,0 +1,39 @@
+/* EBP Scrolling Slider 1 – 5 slides visible, auto-scroll, loop */
+
+.ebp-scrolling-slider-1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.ebp-scrolling-slider-1 .ebp-scrolling-slider-1-swiper {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.ebp-scrolling-slider-1 .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ebp-scrolling-slider-1-slide-inner {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  /* border-radius: 4px; */
+}
+
+.ebp-scrolling-slider-1 .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.swiper-slide {
+  width: auto; /* required for natural marquee sizing */
+}

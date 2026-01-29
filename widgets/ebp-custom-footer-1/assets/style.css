@@ -13,8 +13,16 @@
 @media (min-width: 768px) {
   .ebp-footer-1-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
+  }
+
+  .ebp-footer-1-row > div:first-of-type {
+    grid-column: 2/6;
+  }
+
+  .ebp-footer-1-row > div:last-of-type {
+    grid-column: 7/13;
   }
 
   .ebp-footer-1-row > div:last-child {
