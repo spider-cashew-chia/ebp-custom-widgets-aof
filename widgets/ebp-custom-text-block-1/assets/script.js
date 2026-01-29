@@ -39,6 +39,19 @@
       const counterCurrent = widget.querySelector('.ebp-text-block-1-counter-current');
       const counterTotal = widget.querySelector('.ebp-text-block-1-counter-total');
 
+      // Wrapper that contains both counter and list – counter is at 50%, we align active member to that same line
+      const teamWrapper = teamList.closest('.ebp-text-block-1-team-wrapper');
+      function getTranslateYForAlignment(memberIndex) {
+        if (!teamWrapper || memberHeight <= 0) return 0;
+        memberHeight = calculateMemberHeight();
+        const wrapperHeight = teamWrapper.offsetHeight;
+        const listOffsetTop = teamList.offsetTop;
+        const memberOffset = memberIndex * memberHeight;
+        const memberCenter = memberHeight / 2;
+        // Counter sits at 50% of wrapper; put active member’s center on that line
+        return (wrapperHeight / 2) - listOffsetTop - memberOffset - memberCenter;
+      }
+
       // Get the total number of team members
       // This helps calculate scroll progress
       const teamCount = teamMembers.length;
@@ -100,12 +113,15 @@
         counterCurrent.textContent = '01';
       }
 
+      // Scroll distance per team member in viewport heights – higher = less sensitive (more scroll needed per member)
+      const scrollPerMemberVh = 220;
+
       // Create ScrollTrigger to pin the widget and control team member display
       // This pins the section while scrolling and shows one team member at a time
       const scrollTrigger = ScrollTrigger.create({
         trigger: widget, // The widget itself is the trigger
         start: 'top top', // Animation starts when top of widget hits top of viewport
-        end: () => `+=${teamCount * 100}vh`, // End after scrolling through all team members (100vh per member)
+        end: () => `+=${teamCount * scrollPerMemberVh}vh`, // More vh per member = less sensitive scroll
         pin: true, // Pin the widget in place while scrolling
         pinSpacing: true, // Disable pin spacing to prevent unwanted padding,
         scrub: 1, // Smooth scrubbing tied to scroll position
@@ -141,24 +157,9 @@
             }
           });
 
-          // Calculate the translation needed to center the active member
-          // We need to move the list up so the active member is in the center of the viewport
+          // Translate the list so the active member lines up with the counter (both at 50% of the team wrapper)
           if (memberHeight > 0 && teamList) {
-            // Recalculate member height in case it changed
-            memberHeight = calculateMemberHeight();
-            
-            // Calculate the total offset of the current member from the top
-            // Each member is spaced by memberHeight (including margin)
-            const memberOffset = currentIndex * memberHeight;
-            
-            // Calculate how much we need to translate to center the member
-            // We want the center of the active member to be at the center of the viewport
-            // So: translateY = viewportCenter - (memberTop + memberCenter)
-            const viewportCenter = window.innerHeight / 2;
-            const memberCenter = memberHeight / 2;
-            const translateY = viewportCenter - memberOffset - memberCenter;
-            
-            // Apply the translation to the team list smoothly
+            const translateY = getTranslateYForAlignment(currentIndex);
             gsap.to(teamList, {
               y: translateY,
               duration: 0.3,
@@ -202,13 +203,9 @@
             }
           });
 
-          // Center the last member
+          // Align the last member with the counter
           if (memberHeight > 0 && teamList) {
-            memberHeight = calculateMemberHeight();
-            const memberOffset = lastIndex * memberHeight;
-            const viewportCenter = window.innerHeight / 2;
-            const memberCenter = memberHeight / 2;
-            const translateY = viewportCenter - memberOffset - memberCenter;
+            const translateY = getTranslateYForAlignment(lastIndex);
             gsap.to(teamList, {
               y: translateY,
               duration: 0.3,
@@ -245,13 +242,9 @@
             }
           });
 
-          // Center the first member
+          // Align the first member with the counter
           if (memberHeight > 0 && teamList) {
-            memberHeight = calculateMemberHeight();
-            const memberOffset = 0;
-            const viewportCenter = window.innerHeight / 2;
-            const memberCenter = memberHeight / 2;
-            const translateY = viewportCenter - memberOffset - memberCenter;
+            const translateY = getTranslateYForAlignment(0);
             gsap.to(teamList, {
               y: translateY,
               duration: 0.3,
@@ -293,18 +286,35 @@
         }
       }
 
+      // Position the team image at the cursor when the user moves the mouse over the widget
+      // This makes the image feel "attached" to the cursor instead of fixed in one place
+      function positionImageAtCursor(clientX, clientY) {
+        if (!imageContainer) return;
+        imageContainer.style.left = clientX + 'px';
+        imageContainer.style.top = clientY + 'px';
+      }
+
+      widget.addEventListener('mousemove', function (e) {
+        positionImageAtCursor(e.clientX, e.clientY);
+      });
+
+      // Optional: when mouse leaves the widget, keep image at last position (no jump)
+      // For "cursor attached" we only update on mousemove, so no extra logic needed
+
+      // Set initial image position before any mousemove so it doesn't sit at 0,0
+      if (imageContainer) {
+        imageContainer.style.left = (window.innerWidth * 0.82) + 'px';
+        imageContainer.style.top = (window.innerHeight * 0.5) + 'px';
+      }
+
       // Initialize image container with first team member's image
       // Show the first team member's image on page load
       if (teamMembers.length > 0) {
         updateTeamMemberImage(0);
-        
-        // Center the first member on initial load
+
+        // Align the first member with the counter on initial load
         if (memberHeight > 0 && teamList) {
-          memberHeight = calculateMemberHeight();
-          const memberOffset = 0;
-          const viewportCenter = window.innerHeight / 2;
-          const memberCenter = memberHeight / 2;
-          const translateY = viewportCenter - memberOffset - memberCenter;
+          const translateY = getTranslateYForAlignment(0);
           gsap.set(teamList, {
             y: translateY
           });

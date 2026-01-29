@@ -188,16 +188,14 @@
   text-transform: uppercase;
 }
 
-/* Featured image container (shown on hover) */
+/* Featured image container – position set by JS to follow cursor */
 .ebp-text-block-1-team-image {
-  position: absolute;
-  top: 60%;
-  right: var(--spacing-lg);
-  transform: translateY(-50%);
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 150px;
   height: 150px;
-  /* border-radius: 50%; */
-  /* overflow: hidden; */
+  transform: translate(-50%, -50%);
   opacity: 0;
   pointer-events: none;
   z-index: 10;
@@ -361,11 +359,10 @@
     top: 0;
   }
 
-  /* Adjust image container position on mobile */
+  /* Image container size on mobile (cursor follow still controlled by JS) */
   .ebp-text-block-1-team-image {
-    right: var(--spacing-sm);
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
   }
 
   /* Adjust font sizes on mobile */
