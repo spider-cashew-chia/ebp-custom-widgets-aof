@@ -264,26 +264,29 @@ class Ebp_Custom_Beliefs_1 extends Widget_Base
         </div>
         <?php endif; ?>
 
-        <!-- beliefs list -->
+        <!-- beliefs list: one scratch zone, items absolute (3 + 2), single canvas on top -->
         <?php if (!empty($beliefs_list)): ?>
         <div class="ebp-beliefs-1-list">
-            <?php foreach ($beliefs_list as $item): ?>
-            <?php
-                $rich_text = $item['rich_text'] ?? '';
-                if (empty($rich_text)) {
-                    continue;
-                }
-                ?>
-            <div class="ebp-beliefs-1-item">
-                <div class="ebp-beliefs-1-item-content">
-                    <?php echo wp_kses_post($rich_text); ?>
+            <div class="ebp-beliefs-1-scratch-zone">
+                <?php foreach ($beliefs_list as $item): ?>
+                <?php
+                    $rich_text = $item['rich_text'] ?? '';
+                    if (empty($rich_text)) {
+                        continue;
+                    }
+                    ?>
+                <div class="ebp-beliefs-1-item">
+                    <div class="ebp-beliefs-1-item-content">
+                        <?php echo wp_kses_post($rich_text); ?>
+                    </div>
                 </div>
-                <div class="ebp-beliefs-1-item-scratch-overlay">
-                    <canvas class="ebp-beliefs-1-item-scratch-canvas"></canvas>
+                <?php endforeach; ?>
+                <!-- Single overlay so user can scratch across multiple items at once -->
+                <div class="ebp-beliefs-1-scratch-overlay">
+                    <canvas class="ebp-beliefs-1-scratch-canvas"></canvas>
                     <div class="ebp-beliefs-1-item-tooltip">Scratch me</div>
                 </div>
             </div>
-            <?php endforeach; ?>
         </div>
         <?php endif; ?>
     </div>

@@ -439,8 +439,10 @@ class Ebp_Custom_Header_1 extends Widget_Base
         <!-- logo -->
         <?php if (!empty($settings['logo']['url'])): ?>
         <div class="ebp-header-1-logo">
-            <img src="<?php echo esc_url($settings['logo']['url']); ?>"
-                alt="<?php echo esc_attr($settings['logo']['alt'] ?? 'Logo'); ?>">
+            <a href="/">
+                <img src="<?php echo esc_url($settings['logo']['url']); ?>"
+                    alt="<?php echo esc_attr($settings['logo']['alt'] ?? 'Logo'); ?>">
+            </a>
         </div>
         <?php endif; ?>
 

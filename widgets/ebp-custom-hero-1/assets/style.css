@@ -1,154 +1,160 @@
 /* Hero 1 Base Styles */
 .ebp-hero-1 {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .ebp-hero-1-container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 /* Background video */
 .ebp-hero-1-background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 /* Background image */
 .ebp-hero-1-background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 /* Overlay */
 .ebp-hero-1-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
 /* Content */
 .ebp-hero-1-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    width: 100%;
-    padding: 2rem;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  bottom: 6rem;
+  left: 1rem;
 }
 
 .ebp-hero-1-heading {
-    margin: 0;
+  position: absolute;
+  transform: translateY(9rem);
+}
+
+.ebp-hero-1-heading {
+  margin: 0;
 }
 
 /* Font Color Styles */
 .ebp-hero-1.font-color-small .ebp-hero-1-content {
-    color: var(--white);
+  color: var(--white);
 }
 
 .ebp-hero-1.font-color-medium .ebp-hero-1-content {
-    color: var(--white);
+  color: var(--white);
 }
 
 .ebp-hero-1.font-color-large .ebp-hero-1-content {
-    color: var(--white);
+  color: var(--white);
 }
 
 /* Heading Color Styles */
 .ebp-hero-1.heading-color-small .ebp-hero-1-heading {
-    color: var(--white);
+  color: var(--white);
 }
 
 .ebp-hero-1.heading-color-medium .ebp-hero-1-heading {
-    color: var(--white);
+  color: var(--white);
 }
 
 .ebp-hero-1.heading-color-large .ebp-hero-1-heading {
-    color: var(--white);
+  color: var(--white);
 }
 
 /* Background Color Styles */
 .ebp-hero-1.background-color-small {
-    background-color: var(--black);
+  background-color: var(--black);
 }
 
 .ebp-hero-1.background-color-medium {
-    background-color: var(--black);
+  background-color: var(--black);
 }
 
 .ebp-hero-1.background-color-large {
-    background-color: var(--black);
+  background-color: var(--black);
 }
 
 /* Margin Top Styles */
 .ebp-hero-1.margin-top-small {
-    margin-top: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
 }
 
 .ebp-hero-1.margin-top-medium {
-    margin-top: var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 
 .ebp-hero-1.margin-top-large {
-    margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
 }
 
 /* Margin Bottom Styles */
 .ebp-hero-1.margin-bottom-small {
-    margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .ebp-hero-1.margin-bottom-medium {
-    margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .ebp-hero-1.margin-bottom-large {
-    margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 /* Padding Top Styles */
 .ebp-hero-1.padding-top-small {
-    padding-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
 }
 
 .ebp-hero-1.padding-top-medium {
-    padding-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
 }
 
 .ebp-hero-1.padding-top-large {
-    padding-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
 }
 
 /* Padding Bottom Styles */
 .ebp-hero-1.padding-bottom-small {
-    padding-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
 }
 
 .ebp-hero-1.padding-bottom-medium {
-    padding-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
 }
 
 .ebp-hero-1.padding-bottom-large {
-    padding-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
 }
